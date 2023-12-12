@@ -9,7 +9,10 @@ import Foundation
 import SwiftUI
 
 struct ProfileView: View {
+    @Binding var currentUser: User?
     var body: some View {
-        Text("Profile View Content Goes Here")
+        if let user = currentUser {
+                ProfileDetailsView(user: user)
+        }
     }
 }

@@ -10,8 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var eventData = EventData()
-
-
+    @Binding var currentUser: User?
     var body: some View {
         TabView {
             MapView(eventData: eventData)
@@ -25,7 +24,7 @@ struct MainView: View {
                     Label("Events", systemImage: "list.bullet")
                 }
             
-            ProfileView()
+            ProfileView(currentUser: $currentUser)
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
