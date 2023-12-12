@@ -25,9 +25,10 @@
 		FCEF5FB42B288F8E006A1C33 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FB32B288F8E006A1C33 /* Event.swift */; };
 		FCEF5FB62B289022006A1C33 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FB52B289022006A1C33 /* User.swift */; };
 		FCEF5FB82B289054006A1C33 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FB72B289054006A1C33 /* LoginView.swift */; };
-		FCEF5FC02B289150006A1C33 /* EventCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FBF2B289150006A1C33 /* EventCreationView.swift */; };
 		FCEF5FC42B289544006A1C33 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FC32B289544006A1C33 /* UserData.swift */; };
 		FCEF5FC62B289ADF006A1C33 /* ProfileDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FC52B289ADF006A1C33 /* ProfileDetailsView.swift */; };
+		FCEF5FC82B28A329006A1C33 /* EventCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FC72B28A329006A1C33 /* EventCreationView.swift */; };
+		FCEF5FCA2B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FC92B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,9 +70,10 @@
 		FCEF5FB32B288F8E006A1C33 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FCEF5FB52B289022006A1C33 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCEF5FB72B289054006A1C33 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		FCEF5FBF2B289150006A1C33 /* EventCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCreationView.swift; path = "../../../../Library/Mobile Documents/.Trash/EventCreationView.swift"; sourceTree = "<group>"; };
 		FCEF5FC32B289544006A1C33 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		FCEF5FC52B289ADF006A1C33 /* ProfileDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsView.swift; sourceTree = "<group>"; };
+		FCEF5FC72B28A329006A1C33 /* EventCreationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCreationView.swift; path = ../../../EventCreationView.swift; sourceTree = "<group>"; };
+		FCEF5FC92B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerMapViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,16 +129,17 @@
 				FCEF5FB22B288EAE006A1C33 /* ViewModels */,
 				FCEF5FC32B289544006A1C33 /* UserData.swift */,
 				FCB99ED72B276401000256FF /* EventData.swift */,
-				FCEF5FBF2B289150006A1C33 /* EventCreationView.swift */,
 				FCB99EE12B27C67C000256FF /* LocationPickerView.swift */,
 				FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */,
+				FCEF5FC72B28A329006A1C33 /* EventCreationView.swift */,
 				FCB99EDB2B276577000256FF /* EventStore.swift */,
 				FCB99ED92B276518000256FF /* EventListView.swift */,
 				FCB99ECF2B2758DB000256FF /* MainView.swift */,
 				FCB99ECD2B2758C3000256FF /* MingledApp.swift */,
+				FCEF5FC92B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift */,
+				FCEF5FC52B289ADF006A1C33 /* ProfileDetailsView.swift */,
 				FCB99EA72B2755AA000256FF /* Assets.xcassets */,
 				FCB99EA92B2755AA000256FF /* Preview Content */,
-				FCEF5FC52B289ADF006A1C33 /* ProfileDetailsView.swift */,
 			);
 			path = MingledOfficial;
 			sourceTree = "<group>";
@@ -327,13 +330,14 @@
 				FCB99ECE2B2758C3000256FF /* MingledApp.swift in Sources */,
 				FCB99EE22B27C67C000256FF /* LocationPickerView.swift in Sources */,
 				FCEF5FC42B289544006A1C33 /* UserData.swift in Sources */,
+				FCEF5FC82B28A329006A1C33 /* EventCreationView.swift in Sources */,
 				FCB99ED02B2758DB000256FF /* MainView.swift in Sources */,
 				FCEF5FC62B289ADF006A1C33 /* ProfileDetailsView.swift in Sources */,
+				FCEF5FCA2B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift in Sources */,
 				FCEF5FB42B288F8E006A1C33 /* Event.swift in Sources */,
 				FCB99EDC2B276577000256FF /* EventStore.swift in Sources */,
 				FCB99ED22B2758E4000256FF /* MapView.swift in Sources */,
 				FCEF5FB82B289054006A1C33 /* LoginView.swift in Sources */,
-				FCEF5FC02B289150006A1C33 /* EventCreationView.swift in Sources */,
 				FCB99EDE2B27AC0E000256FF /* MapViewRepresentable.swift in Sources */,
 				FCB99EDA2B276518000256FF /* EventListView.swift in Sources */,
 				FCB99ED42B2758F0000256FF /* EventView.swift in Sources */,

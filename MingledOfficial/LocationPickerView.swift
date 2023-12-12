@@ -15,7 +15,7 @@ struct LocationPickerView: View {
 
     var body: some View {
         VStack {
-            MapViewRepresentable(events: .constant([]), selectedCoordinate: $selectedCoordinate)
+            LocationPickerMapViewRepresentable(selectedCoordinate: $selectedCoordinate)
                 .edgesIgnoringSafeArea(.all)
             
             Button("Confirm Location") {
