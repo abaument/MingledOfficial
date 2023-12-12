@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct TabBarController: View {
+struct MainView: View {
     @StateObject private var eventData = EventData()
 
 

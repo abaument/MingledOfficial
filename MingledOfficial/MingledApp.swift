@@ -15,7 +15,7 @@ struct MingledApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabBarController()
+            MainView()
                 .environmentObject(eventStore)
         }
     }

@@ -18,6 +18,7 @@ struct MapViewRepresentable: UIViewRepresentable {
         mapView.delegate = context.coordinator
         let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.mapTapped(_:)))
         mapView.addGestureRecognizer(tapGesture)
+        
         return mapView
     }
     

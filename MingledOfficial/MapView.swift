@@ -1,20 +1,17 @@
-import Foundation
 import SwiftUI
 import MapKit
 
 struct MapView: View {
     @ObservedObject var eventData: EventData
-
-    @State private var events: [Event] = []
-    @State private var isAddingEvent = false
+    @State private var showingEventCreationSheet = false
 
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            MapViewRepresentable(events: $events, selectedCoordinate: .constant(nil))
+        ZStack(alignment: .bottomTrailing) {
+            MapViewRepresentable(events: $eventData.events, selectedCoordinate: .constant(nil))
                 .edgesIgnoringSafeArea(.all)
 
             Button(action: {
-                isAddingEvent = true
+                showingEventCreationSheet = true
             }) {
                 Image(systemName: "plus")
                     .padding()
@@ -23,12 +20,9 @@ struct MapView: View {
                     .clipShape(Circle())
             }
             .padding()
-        }
-        .sheet(isPresented: $isAddingEvent) {
-            EventCreationView(events: $events)
+            .sheet(isPresented: $showingEventCreationSheet) {
+                EventCreationView(eventData: eventData)
+            }
         }
     }
 }
-
-
-

@@ -13,11 +13,11 @@
 		FCB99EBF2B2755AA000256FF /* MingledOfficialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99EBE2B2755AA000256FF /* MingledOfficialUITests.swift */; };
 		FCB99EC12B2755AA000256FF /* MingledOfficialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99EC02B2755AA000256FF /* MingledOfficialUITestsLaunchTests.swift */; };
 		FCB99ECE2B2758C3000256FF /* MingledApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ECD2B2758C3000256FF /* MingledApp.swift */; };
-		FCB99ED02B2758DB000256FF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ECF2B2758DB000256FF /* TabBarController.swift */; };
+		FCB99ED02B2758DB000256FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ECF2B2758DB000256FF /* MainView.swift */; };
 		FCB99ED22B2758E4000256FF /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ED12B2758E4000256FF /* MapView.swift */; };
 		FCB99ED42B2758F0000256FF /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ED32B2758F0000256FF /* EventView.swift */; };
 		FCB99ED62B2758FD000256FF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ED52B2758FC000256FF /* ProfileView.swift */; };
-		FCB99ED82B276401000256FF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ED72B276401000256FF /* Event.swift */; };
+		FCB99ED82B276401000256FF /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ED72B276401000256FF /* EventData.swift */; };
 		FCB99EDA2B276518000256FF /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99ED92B276518000256FF /* EventListView.swift */; };
 		FCB99EDC2B276577000256FF /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99EDB2B276577000256FF /* EventStore.swift */; };
 		FCB99EDE2B27AC0E000256FF /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */; };
@@ -52,11 +52,11 @@
 		FCB99EBE2B2755AA000256FF /* MingledOfficialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MingledOfficialUITests.swift; sourceTree = "<group>"; };
 		FCB99EC02B2755AA000256FF /* MingledOfficialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MingledOfficialUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FCB99ECD2B2758C3000256FF /* MingledApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MingledApp.swift; sourceTree = "<group>"; };
-		FCB99ECF2B2758DB000256FF /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		FCB99ECF2B2758DB000256FF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		FCB99ED12B2758E4000256FF /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		FCB99ED32B2758F0000256FF /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		FCB99ED52B2758FC000256FF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		FCB99ED72B276401000256FF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FCB99ED72B276401000256FF /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
 		FCB99ED92B276518000256FF /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		FCB99EDB2B276577000256FF /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 		FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
@@ -112,16 +112,16 @@
 		FCB99EA22B2755A9000256FF /* MingledOfficial */ = {
 			isa = PBXGroup;
 			children = (
-				FCB99ED72B276401000256FF /* Event.swift */,
+				FCB99ED72B276401000256FF /* EventData.swift */,
 				FCB99EE52B27D0BE000256FF /* EventCreationView.swift */,
 				FCB99EE12B27C67C000256FF /* LocationPickerView.swift */,
 				FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */,
+				FCB99ED12B2758E4000256FF /* MapView.swift */,
 				FCB99EDB2B276577000256FF /* EventStore.swift */,
 				FCB99ED92B276518000256FF /* EventListView.swift */,
 				FCB99ED32B2758F0000256FF /* EventView.swift */,
-				FCB99ED12B2758E4000256FF /* MapView.swift */,
 				FCB99ED52B2758FC000256FF /* ProfileView.swift */,
-				FCB99ECF2B2758DB000256FF /* TabBarController.swift */,
+				FCB99ECF2B2758DB000256FF /* MainView.swift */,
 				FCB99ECD2B2758C3000256FF /* MingledApp.swift */,
 				FCB99EA72B2755AA000256FF /* Assets.xcassets */,
 				FCB99EA92B2755AA000256FF /* Preview Content */,
@@ -286,14 +286,14 @@
 			files = (
 				FCB99ECE2B2758C3000256FF /* MingledApp.swift in Sources */,
 				FCB99EE22B27C67C000256FF /* LocationPickerView.swift in Sources */,
-				FCB99ED02B2758DB000256FF /* TabBarController.swift in Sources */,
+				FCB99ED02B2758DB000256FF /* MainView.swift in Sources */,
 				FCB99EE62B27D0BE000256FF /* EventCreationView.swift in Sources */,
 				FCB99EDC2B276577000256FF /* EventStore.swift in Sources */,
 				FCB99ED22B2758E4000256FF /* MapView.swift in Sources */,
 				FCB99EDE2B27AC0E000256FF /* MapViewRepresentable.swift in Sources */,
 				FCB99EDA2B276518000256FF /* EventListView.swift in Sources */,
 				FCB99ED42B2758F0000256FF /* EventView.swift in Sources */,
-				FCB99ED82B276401000256FF /* Event.swift in Sources */,
+				FCB99ED82B276401000256FF /* EventData.swift in Sources */,
 				FCB99ED62B2758FD000256FF /* ProfileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
