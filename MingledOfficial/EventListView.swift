@@ -12,12 +12,13 @@ struct EventListView: View {
     var events: [Event]
 
     var body: some View {
-        List(events, id: \.id) { event in
+        List(events, id: \.title) { event in
             VStack(alignment: .leading) {
                 Text(event.title)
                     .font(.headline)
                 Text(event.description)
                     .font(.subheadline)
+                
             }
         }
     }
