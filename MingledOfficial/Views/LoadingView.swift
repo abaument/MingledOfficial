@@ -12,17 +12,16 @@ import SwiftUI
 struct LoadingView: View {
     var body: some View {
         VStack {
-            Image("Icone2")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
+            Spacer()
+            Text("Chargement...")
+                .font(.headline)
+                .foregroundColor(.gray)
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                .scaleEffect(1.5, anchor: .center)
-            
+                .scaleEffect(1.5)
             Spacer()
         }
-        .padding()
         .background(Color.white)
+        .edgesIgnoringSafeArea(.all)
     }
 }

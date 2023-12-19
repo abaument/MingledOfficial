@@ -24,7 +24,7 @@ struct ContentView: View {
         }
         .onAppear {
             // Démarrer un timer pour changer isLoading après un délai
-            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { // 3 secondes de délai
                 isLoading = false
             }
         }

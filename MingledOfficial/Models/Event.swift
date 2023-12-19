@@ -9,17 +9,13 @@ import Foundation
 import MapKit
 import SwiftUI
 
-struct Event: Identifiable, Hashable {
-    var id = UUID() // Ajoutez une propriété identifiant unique
+struct Event: Identifiable, Hashable, Codable {
+    var id: UUID
     var title: String
     var description: String
-    var coordinate: CLLocationCoordinate2D
-
-    static func == (lhs: Event, rhs: Event) -> Bool {
-        return lhs.id == rhs.id
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+    var latitude: Double
+    var longitude: Double
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }

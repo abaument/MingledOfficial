@@ -13,7 +13,7 @@ class EventStore: ObservableObject {
     @Published var events: [Event] = []
 
     func addEvent(title: String, description: String, coordinate: CLLocationCoordinate2D) {
-        let newEvent = Event(title: title, description: description, coordinate: coordinate)
+        let newEvent = Event(id: UUID(), title: title, description: description, latitude: coordinate.latitude, longitude: coordinate.longitude)
         events.append(newEvent)
     }
 }

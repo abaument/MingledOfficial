@@ -40,9 +40,11 @@ struct EventCreationView: View {
 
                 Section {
                     Button("Create Event") {
-                        let newEvent = Event(title: title, description: description, coordinate: selectedCoordinate ?? CLLocationCoordinate2D())
-                        eventData.events.append(newEvent)
-                        presentationMode.wrappedValue.dismiss()
+                        if let coordinate = selectedCoordinate {
+                            let newEvent = Event(id: UUID(), title: title, description: description, latitude: coordinate.latitude, longitude: coordinate.longitude)
+                            eventData.events.append(newEvent)
+                            presentationMode.wrappedValue.dismiss()
+                        }
                     }
                     .disabled(selectedCoordinate == nil)
                 }

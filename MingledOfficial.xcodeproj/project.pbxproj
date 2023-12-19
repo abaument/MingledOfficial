@@ -107,6 +107,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC3724FB2B31D95F00F4AD1C /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */,
+				FCEF5FC92B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift */,
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
+		FC3724FC2B31D97E00F4AD1C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FCEF5FC32B289544006A1C33 /* UserData.swift */,
+				FCB99ED72B276401000256FF /* EventData.swift */,
+				FCEF5FCD2B29AA5B006A1C33 /* Networking.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		FCB99E972B2755A9000256FF = {
 			isa = PBXGroup;
 			children = (
@@ -130,23 +149,13 @@
 		FCB99EA22B2755A9000256FF /* MingledOfficial */ = {
 			isa = PBXGroup;
 			children = (
+				FC3724FC2B31D97E00F4AD1C /* Data */,
+				FC3724FB2B31D95F00F4AD1C /* Representable */,
 				FCEF5FB02B288E80006A1C33 /* Views */,
 				FCEF5FB12B288EA2006A1C33 /* Models */,
 				FCEF5FB22B288EAE006A1C33 /* ViewModels */,
-				FCEF5FC32B289544006A1C33 /* UserData.swift */,
-				FCB99ED72B276401000256FF /* EventData.swift */,
-				FCEF5FCF2B2A0A09006A1C33 /* LoadingView.swift */,
-				FCEF5FCB2B29A230006A1C33 /* EventCreationView.swift */,
-				FCB99EE12B27C67C000256FF /* LocationPickerView.swift */,
-				FCEF5FCD2B29AA5B006A1C33 /* Networking.swift */,
-				FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */,
-				FCEF5FD12B2A1077006A1C33 /* ContentView.swift */,
-				FCB99EDB2B276577000256FF /* EventStore.swift */,
-				FCB99ED92B276518000256FF /* EventListView.swift */,
 				FCB99ECF2B2758DB000256FF /* MainView.swift */,
 				FCB99ECD2B2758C3000256FF /* MingledApp.swift */,
-				FCEF5FC92B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift */,
-				FCEF5FC52B289ADF006A1C33 /* ProfileDetailsView.swift */,
 				FCB99EA72B2755AA000256FF /* Assets.xcassets */,
 				FCB99EA92B2755AA000256FF /* Preview Content */,
 			);
@@ -184,6 +193,12 @@
 				FCB99ED32B2758F0000256FF /* EventView.swift */,
 				FCB99ED12B2758E4000256FF /* MapView.swift */,
 				FCB99ED52B2758FC000256FF /* ProfileView.swift */,
+				FCEF5FCF2B2A0A09006A1C33 /* LoadingView.swift */,
+				FCB99EE12B27C67C000256FF /* LocationPickerView.swift */,
+				FCEF5FCB2B29A230006A1C33 /* EventCreationView.swift */,
+				FCEF5FD12B2A1077006A1C33 /* ContentView.swift */,
+				FCB99ED92B276518000256FF /* EventListView.swift */,
+				FCEF5FC52B289ADF006A1C33 /* ProfileDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +215,7 @@
 		FCEF5FB22B288EAE006A1C33 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FCB99EDB2B276577000256FF /* EventStore.swift */,
 				FCEF5FB72B289054006A1C33 /* LoginView.swift */,
 			);
 			path = ViewModels;
