@@ -1,32 +1,47 @@
 import SwiftUI
 import MapKit
-import Foundation   
 
 struct MapView: View {
     @ObservedObject var eventData: EventData
     @State private var showingEventCreationSheet = false
     @State private var selectedEvent: Event?
     @State private var showingEventDetails = false
-    @State private var selectedCoordinate: CLLocationCoordinate2D? = nil// Ajouté
-    
+    @State private var selectedCoordinate: CLLocationCoordinate2D? = nil
+
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            MapViewRepresentable(events: $eventData.events, selectedEvent: $selectedEvent, isSelectingLocation: false, selectedCoordinate: .constant(nil))
-                .edgesIgnoringSafeArea(.all)
+        ZStack {
+            // Contenu principal de la carte
+            VStack {
+                MapViewRepresentable(events: $eventData.events, selectedEvent: $selectedEvent, isSelectingLocation: false, selectedCoordinate: .constant(nil))
+                    .edgesIgnoringSafeArea(.all)
 
-            Button(action: {
-                showingEventCreationSheet = true
-            }) {
-                Image(systemName: "plus")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .clipShape(Circle())
+                Spacer() // Ce Spacer pousse la bande en bas
+
+                // Bande blanche
+                Rectangle()
+                    .fill(Color.white)
+                    .frame(height: 20) // Hauteur de la bande blanche
             }
-            .padding()
 
-            if showingEventDetails, let event = selectedEvent {
-                eventDetailsView(event)
+            // Bouton et autres éléments flottants
+            VStack {
+                Spacer()
+
+                if showingEventDetails, let event = selectedEvent {
+                    eventDetailsView(event)
+                        .padding(.bottom, 60) // Ajuster en fonction de la hauteur de la bande
+                }
+
+                Button(action: {
+                    showingEventCreationSheet = true
+                }) {
+                    Image(systemName: "plus")
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                }
+                .padding()
             }
         }
         .sheet(isPresented: $showingEventCreationSheet) {

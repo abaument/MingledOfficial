@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FCAAF2282B45D6DB0092DD4C /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */; };
+		FCAAF22A2B45D7AD0092DD4C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */; };
 		FCB99EA82B2755AA000256FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB99EA72B2755AA000256FF /* Assets.xcassets */; };
 		FCB99EAB2B2755AA000256FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB99EAA2B2755AA000256FF /* Preview Assets.xcassets */; };
 		FCB99EB52B2755AA000256FF /* MingledOfficialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99EB42B2755AA000256FF /* MingledOfficialTests.swift */; };
@@ -32,6 +34,7 @@
 		FCEF5FCE2B29AA5B006A1C33 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FCD2B29AA5B006A1C33 /* Networking.swift */; };
 		FCEF5FD02B2A0A09006A1C33 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FCF2B2A0A09006A1C33 /* LoadingView.swift */; };
 		FCEF5FD22B2A1077006A1C33 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FD12B2A1077006A1C33 /* ContentView.swift */; };
+		FCF298132B338DEC00E530FB /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF298122B338DEC00E530FB /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
+		FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 		FCB99EA02B2755A9000256FF /* MingledOfficial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MingledOfficial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB99EA72B2755AA000256FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCB99EAA2B2755AA000256FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 		FCEF5FCD2B29AA5B006A1C33 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		FCEF5FCF2B2A0A09006A1C33 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FCEF5FD12B2A1077006A1C33 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FCF298122B338DEC00E530FB /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				FCEF5FC32B289544006A1C33 /* UserData.swift */,
 				FCB99ED72B276401000256FF /* EventData.swift */,
 				FCEF5FCD2B29AA5B006A1C33 /* Networking.swift */,
+				FCF298122B338DEC00E530FB /* RegistrationView.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -158,6 +165,8 @@
 				FCB99ECD2B2758C3000256FF /* MingledApp.swift */,
 				FCB99EA72B2755AA000256FF /* Assets.xcassets */,
 				FCB99EA92B2755AA000256FF /* Preview Content */,
+				FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */,
+				FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */,
 			);
 			path = MingledOfficial;
 			sourceTree = "<group>";
@@ -361,16 +370,19 @@
 				FCEF5FC62B289ADF006A1C33 /* ProfileDetailsView.swift in Sources */,
 				FCEF5FCA2B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift in Sources */,
 				FCEF5FB42B288F8E006A1C33 /* Event.swift in Sources */,
+				FCF298132B338DEC00E530FB /* RegistrationView.swift in Sources */,
 				FCEF5FCC2B29A230006A1C33 /* EventCreationView.swift in Sources */,
 				FCB99EDC2B276577000256FF /* EventStore.swift in Sources */,
 				FCB99ED22B2758E4000256FF /* MapView.swift in Sources */,
 				FCEF5FB82B289054006A1C33 /* LoginView.swift in Sources */,
 				FCB99EDE2B27AC0E000256FF /* MapViewRepresentable.swift in Sources */,
+				FCAAF2282B45D6DB0092DD4C /* CustomAnnotationView.swift in Sources */,
 				FCB99EDA2B276518000256FF /* EventListView.swift in Sources */,
 				FCB99ED42B2758F0000256FF /* EventView.swift in Sources */,
 				FCB99ED82B276401000256FF /* EventData.swift in Sources */,
 				FCEF5FD02B2A0A09006A1C33 /* LoadingView.swift in Sources */,
 				FCB99ED62B2758FD000256FF /* ProfileView.swift in Sources */,
+				FCAAF22A2B45D7AD0092DD4C /* EventAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,8 +12,8 @@ import MapKit
 class EventStore: ObservableObject {
     @Published var events: [Event] = []
 
-    func addEvent(title: String, description: String, coordinate: CLLocationCoordinate2D) {
-        let newEvent = Event(id: UUID(), title: title, description: description, latitude: coordinate.latitude, longitude: coordinate.longitude)
+    func addEvent(title: String, description: String, coordinate: CLLocationCoordinate2D, creator: String) {
+        let newEvent = Event(id: UUID(), title: title, description: description, latitude: coordinate.latitude, longitude: coordinate.longitude, creator: creator)
         events.append(newEvent)
     }
 }

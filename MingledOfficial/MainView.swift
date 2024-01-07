@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import MapKit
 
 struct MainView: View {
     @StateObject private var eventData = EventData()

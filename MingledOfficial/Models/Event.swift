@@ -18,4 +18,5 @@ struct Event: Identifiable, Hashable, Codable {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
+    var creator: String
 }

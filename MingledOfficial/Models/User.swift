@@ -13,8 +13,4 @@ struct User: Identifiable, Decodable {
     var id: UUID
     var username: String
     var email: String
-    var password: String
-    // Ajoutez d'autres informations selon vos besoins
-
-    // Assurez-vous que 'UUID' est géré correctement lors de la décodage.
 }

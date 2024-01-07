@@ -10,16 +10,15 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
+    @StateObject var userData = UserData()
     @State private var isLoading = true
-    @State private var currentUser: User? = nil
-    @State private var isUserLoggedIn = false
     
     var body: some View {
         Group {
             if isLoading {
                 LoadingView()
             } else {
-                LoginView(currentUser: $currentUser, isUserLoggedIn: $isUserLoggedIn)
+                LoginView(userData: userData)
             }
         }
         .onAppear {

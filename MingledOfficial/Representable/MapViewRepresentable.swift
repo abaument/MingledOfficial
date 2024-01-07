@@ -17,9 +17,13 @@ struct MapViewRepresentable: UIViewRepresentable {
     func updateUIView(_ uiView: MKMapView, context: Context) {
         uiView.removeAnnotations(uiView.annotations)
         for event in events {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = event.coordinate
-            annotation.title = event.title
+            let annotation = EventAnnotation(
+                coordinate: event.coordinate,
+                title: event.title,
+                subtitle: "Crée par: \(event.creator)",
+                image: UIImage(named: "customPinImage"),
+                creator: event.creator
+            )
             uiView.addAnnotation(annotation)
         }
     }
@@ -34,9 +38,25 @@ struct MapViewRepresentable: UIViewRepresentable {
         init(_ parent: MapViewRepresentable) {
             self.parent = parent
         }
-        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-            guard let coordinate = view.annotation?.coordinate else { return }
-            parent.selectedEvent = parent.events.first { $0.coordinate.latitude == coordinate.latitude && $0.coordinate.longitude == coordinate.longitude }
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+                guard let eventAnnotation = annotation as? EventAnnotation else { return nil }
+                let identifier = "EventAnnotation"
+                var view: CustomAnnotationView
+                if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? CustomAnnotationView {
+                    dequeuedView.annotation = eventAnnotation
+                    view = dequeuedView
+                } else {
+                    view = CustomAnnotationView(annotation: eventAnnotation, reuseIdentifier: identifier)
+                }
+                return view
+            }
+
+            func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+                guard let eventAnnotation = view.annotation as? EventAnnotation else { return }
+                parent.selectedEvent = parent.events.first {
+                    $0.coordinate.latitude == eventAnnotation.coordinate.latitude &&
+                    $0.coordinate.longitude == eventAnnotation.coordinate.longitude
+            }
         }
         @objc func mapTapped(_ sender: UITapGestureRecognizer) {
             if parent.isSelectingLocation {

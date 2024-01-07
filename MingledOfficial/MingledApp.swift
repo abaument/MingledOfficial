@@ -11,7 +11,6 @@ import MapKit
 
 @main
 struct MingledApp: App {
-    @StateObject private var eventStore = EventStore()
     @StateObject var userData = UserData()
     
     var body: some Scene {
@@ -19,7 +18,7 @@ struct MingledApp: App {
             if userData.isUserLoggedIn {
                 MainView(currentUser: $userData.currentUser)
             } else {
-                LoginView(currentUser: $userData.currentUser, isUserLoggedIn: $userData.isUserLoggedIn)
+                LoginView(userData: userData)
             }
         }
     }
