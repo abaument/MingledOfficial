@@ -16,15 +16,14 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
         uiView.removeAnnotations(uiView.annotations)
-        for event in events {
-            let annotation = EventAnnotation(
-                coordinate: event.coordinate,
-                title: event.title,
-                subtitle: "Crée par: \(event.creator)",
-                image: UIImage(named: "customPinImage"),
-                creator: event.creator
-            )
+        for event in events  {
+            let annotation = EventAnnotation(coordinate: event.coordinate, title: event.title, subtitle: "", image: UIImage(named: "pin"), creator: event.creator)
             uiView.addAnnotation(annotation)
+        }
+        
+        if isSelectingLocation, let coordinate = selectedCoordinate {
+            let selectionAnnotation = EventAnnotation(coordinate: coordinate, title: "", subtitle: "", image: UIImage(named: "pin"), creator: "")
+            uiView.addAnnotation(selectionAnnotation)
         }
     }
     
@@ -41,22 +40,25 @@ struct MapViewRepresentable: UIViewRepresentable {
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
                 guard let eventAnnotation = annotation as? EventAnnotation else { return nil }
                 let identifier = "EventAnnotation"
-                var view: CustomAnnotationView
-                if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? CustomAnnotationView {
-                    dequeuedView.annotation = eventAnnotation
+                var view: MKAnnotationView
+                if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
                     view = dequeuedView
+                    view.annotation = annotation
                 } else {
                     view = CustomAnnotationView(annotation: eventAnnotation, reuseIdentifier: identifier)
+                    view.canShowCallout = true
                 }
+                view.image = eventAnnotation.image
+                view.leftCalloutAccessoryView = UIImageView(image: eventAnnotation.image)
+                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
                 return view
             }
 
             func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-                guard let eventAnnotation = view.annotation as? EventAnnotation else { return }
-                parent.selectedEvent = parent.events.first {
-                    $0.coordinate.latitude == eventAnnotation.coordinate.latitude &&
-                    $0.coordinate.longitude == eventAnnotation.coordinate.longitude
-            }
+                guard let annotation = view.annotation as? EventAnnotation else { return }
+                if let event = parent.events.first(where: { $0.coordinate.latitude == annotation.coordinate.latitude && $0.coordinate.longitude == annotation.coordinate.longitude}) {
+                    parent.selectedEvent = event
+                }
         }
         @objc func mapTapped(_ sender: UITapGestureRecognizer) {
             if parent.isSelectingLocation {
@@ -66,6 +68,5 @@ struct MapViewRepresentable: UIViewRepresentable {
                     parent.selectedCoordinate = coordinate
             }
         }
-        
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC8438BA2B571AFA00282D36 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8438B92B571AFA00282D36 /* EventDetailView.swift */; };
 		FCAAF2282B45D6DB0092DD4C /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */; };
 		FCAAF22A2B45D7AD0092DD4C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */; };
 		FCB99EA82B2755AA000256FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCB99EA72B2755AA000256FF /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC8438B92B571AFA00282D36 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
 		FCB99EA02B2755A9000256FF /* MingledOfficial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MingledOfficial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				FCB99ED72B276401000256FF /* EventData.swift */,
 				FCEF5FCD2B29AA5B006A1C33 /* Networking.swift */,
 				FCF298122B338DEC00E530FB /* RegistrationView.swift */,
+				FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -165,8 +168,7 @@
 				FCB99ECD2B2758C3000256FF /* MingledApp.swift */,
 				FCB99EA72B2755AA000256FF /* Assets.xcassets */,
 				FCB99EA92B2755AA000256FF /* Preview Content */,
-				FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */,
-				FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */,
+				FC8438B92B571AFA00282D36 /* EventDetailView.swift */,
 			);
 			path = MingledOfficial;
 			sourceTree = "<group>";
@@ -199,6 +201,7 @@
 		FCEF5FB02B288E80006A1C33 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */,
 				FCB99ED32B2758F0000256FF /* EventView.swift */,
 				FCB99ED12B2758E4000256FF /* MapView.swift */,
 				FCB99ED52B2758FC000256FF /* ProfileView.swift */,
@@ -368,6 +371,7 @@
 				FCB99ED02B2758DB000256FF /* MainView.swift in Sources */,
 				FCEF5FD22B2A1077006A1C33 /* ContentView.swift in Sources */,
 				FCEF5FC62B289ADF006A1C33 /* ProfileDetailsView.swift in Sources */,
+				FC8438BA2B571AFA00282D36 /* EventDetailView.swift in Sources */,
 				FCEF5FCA2B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift in Sources */,
 				FCEF5FB42B288F8E006A1C33 /* Event.swift in Sources */,
 				FCF298132B338DEC00E530FB /* RegistrationView.swift in Sources */,

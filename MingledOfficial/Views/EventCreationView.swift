@@ -41,7 +41,7 @@ struct EventCreationView: View {
                 Section {
                     Button("Create Event") {
                         if let coordinate = selectedCoordinate {
-                            let newEvent = Event(id: UUID(), title: title, description: description, latitude: coordinate.latitude, longitude: coordinate.longitude, creator: creator)
+                            let newEvent = Event(id: UUID(), title: title, description: description, latitude: coordinate.latitude, longitude: coordinate.longitude, creator: "DefaultCreator")
                             eventData.events.append(newEvent)
                             presentationMode.wrappedValue.dismiss()
                         }

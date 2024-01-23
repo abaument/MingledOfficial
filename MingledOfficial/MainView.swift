@@ -14,7 +14,7 @@ struct MainView: View {
     @Binding var currentUser: User?
     var body: some View {
         TabView {
-            MapView(eventData: eventData)
+            MapView(eventData: eventData, currentUser: $currentUser)
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Map")

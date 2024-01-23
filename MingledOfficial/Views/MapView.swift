@@ -3,11 +3,11 @@ import MapKit
 
 struct MapView: View {
     @ObservedObject var eventData: EventData
+    @Binding var currentUser: User?
     @State private var showingEventCreationSheet = false
     @State private var selectedEvent: Event?
     @State private var showingEventDetails = false
     @State private var selectedCoordinate: CLLocationCoordinate2D? = nil
-
     var body: some View {
         ZStack {
             // Contenu principal de la carte
@@ -42,10 +42,13 @@ struct MapView: View {
                         .clipShape(Circle())
                 }
                 .padding()
+                .sheet(isPresented: $showingEventCreationSheet) {
+                    EventCreationView(eventData: eventData, selectedCoordinate: $selectedCoordinate)
+                }
             }
         }
-        .sheet(isPresented: $showingEventCreationSheet) {
-            EventCreationView(eventData: eventData, selectedCoordinate: $selectedCoordinate)
+        .sheet(item : $selectedEvent) {event in
+            EventDetailView(event: event)
         }
     }
 
