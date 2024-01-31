@@ -37,21 +37,20 @@ struct MapViewRepresentable: UIViewRepresentable {
         init(_ parent: MapViewRepresentable) {
             self.parent = parent
         }
+        
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-                guard let eventAnnotation = annotation as? EventAnnotation else { return nil }
+            if let eventAnnotation = annotation as? EventAnnotation {
                 let identifier = "EventAnnotation"
-                var view: MKAnnotationView
-                if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
+                var view: CustomAnnotationView
+                if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? CustomAnnotationView {
+                    dequeuedView.annotation = eventAnnotation
                     view = dequeuedView
-                    view.annotation = annotation
                 } else {
                     view = CustomAnnotationView(annotation: eventAnnotation, reuseIdentifier: identifier)
-                    view.canShowCallout = true
                 }
-                view.image = eventAnnotation.image
-                view.leftCalloutAccessoryView = UIImageView(image: eventAnnotation.image)
-                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
                 return view
+                }
+            return nil 
             }
 
             func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
