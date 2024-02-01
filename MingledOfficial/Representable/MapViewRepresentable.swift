@@ -17,12 +17,12 @@ struct MapViewRepresentable: UIViewRepresentable {
     func updateUIView(_ uiView: MKMapView, context: Context) {
         uiView.removeAnnotations(uiView.annotations)
         for event in events  {
-            let annotation = EventAnnotation(coordinate: event.coordinate, title: event.title, subtitle: "", image: UIImage(named: "pin"), creator: event.creator)
+            let annotation = EventAnnotation(coordinate: event.coordinate, title: event.title, subtitle: "Created By: \(event.creator)", image: nil, creator: event.creator)
             uiView.addAnnotation(annotation)
         }
         
         if isSelectingLocation, let coordinate = selectedCoordinate {
-            let selectionAnnotation = EventAnnotation(coordinate: coordinate, title: "", subtitle: "", image: UIImage(named: "pin"), creator: "")
+            let selectionAnnotation = EventAnnotation(coordinate: coordinate, title: "", subtitle: "", image: nil, creator: "")
             uiView.addAnnotation(selectionAnnotation)
         }
     }
@@ -50,7 +50,7 @@ struct MapViewRepresentable: UIViewRepresentable {
                 }
                 return view
                 }
-            return nil 
+            return nil
             }
 
             func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

@@ -20,7 +20,9 @@ class EventAnnotation: NSObject, MKAnnotation {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle
-        self.image = image
+        let imageNames = ["pin", "type1", "type2", "type3", "type4", "type5", "type6", "type7"]
+        let randomIndex = Int(arc4random_uniform(UInt32(imageNames.count)))
+        self.image = UIImage(named: imageNames[randomIndex])
         self.creator = creator
     }
 }
