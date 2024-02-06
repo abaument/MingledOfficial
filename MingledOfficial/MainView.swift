@@ -12,6 +12,8 @@ import MapKit
 struct MainView: View {
     @StateObject private var eventData = EventData()
     @Binding var currentUser: User?
+    @Binding var isUserLoggedIn: Bool
+    @State private var selectedEvent: Event?
     var body: some View {
         TabView {
             MapView(eventData: eventData, currentUser: $currentUser)
@@ -20,12 +22,18 @@ struct MainView: View {
                     Text("Map")
                 }
             
-            EventView(eventData: eventData)
+            EventView(eventData: eventData, selectedEvent: $selectedEvent)
                 .tabItem {
                     Label("Events", systemImage: "list.bullet")
                 }
             
-            ProfileView(currentUser: $currentUser)
+            ChatView()
+                .tabItem {
+                    Image(systemName: "message")
+                    Text("Chat")
+                }
+            
+            ProfileView(currentUser: $currentUser, isUserLoggedIn: $isUserLoggedIn)
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")

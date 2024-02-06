@@ -13,6 +13,10 @@ struct LoadingView: View {
     var body: some View {
         VStack {
             Spacer()
+            Image("loading")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 200)
             Text("Chargement...")
                 .font(.headline)
                 .foregroundColor(.gray)

@@ -1,10 +1,3 @@
-//
-//  EventCreationView.swift
-//  MingledOfficial
-//
-//  Created by arthur baument on 13/12/2023.
-//
-
 import Foundation
 import MapKit
 import SwiftUI
@@ -13,46 +6,45 @@ struct EventCreationView: View {
     @ObservedObject var eventData: EventData
     @State private var title: String = ""
     @State private var description: String = ""
+    @State private var showingImagePicker = false
+    @State private var selectedImages: [UIImage] = []
     @Binding var selectedCoordinate: CLLocationCoordinate2D?
-    @State private var showingLocationPicker = false
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {
             Form {
-                Section {
-                    TextField("Title", text: $title)
+                Section(header: Text("Détails de l'événement")) {
+                    TextField("Titre", text: $title)
                     TextField("Description", text: $description)
                 }
 
-                Section {
-                    Button("Select Location") {
-                        showingLocationPicker = true
-                    }
-                    .sheet(isPresented: $showingLocationPicker) {
-                        LocationPickerView(selectedCoordinate: $selectedCoordinate)
+                Section(header: Text("Images")) {
+                    Button("Sélectionner des images") {
+                        showingImagePicker = true
                     }
 
-                    if let coordinate = selectedCoordinate {
-                        Text("Location: \(coordinate.latitude), \(coordinate.longitude)")
+                    ForEach(selectedImages, id: \.self) { img in
+                        Image(uiImage: img)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 100)
                     }
                 }
 
                 Section {
-                    Button("Create Event") {
-                        if let coordinate = selectedCoordinate {
-                            let newEvent = Event(id: UUID(), title: title, description: description, latitude: coordinate.latitude, longitude: coordinate.longitude, creator: "DefaultCreator")
-                            eventData.events.append(newEvent)
-                            presentationMode.wrappedValue.dismiss()
-                        }
+                    Button("Créer l'événement") {
+                        // Ajoutez la logique de création de l'événement ici
                     }
-                    .disabled(selectedCoordinate == nil)
                 }
             }
-            .navigationBarTitle("New Event", displayMode: .inline)
-            .navigationBarItems(trailing: Button("Cancel") {
+            .navigationBarTitle("Nouvel Événement", displayMode: .inline)
+            .navigationBarItems(trailing: Button("Annuler") {
                 presentationMode.wrappedValue.dismiss()
             })
+            .sheet(isPresented: $showingImagePicker) {
+                PhotoLibraryPicker(selectedImages: $selectedImages)
+            }
         }
     }
 }

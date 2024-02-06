@@ -13,12 +13,23 @@ struct ProfileDetailsView: View {
     var user: User
 
     var body: some View {
-        VStack {
-            Text("Profil de l'utilisateur")
+        VStack(spacing: 20) {
+            Image("profilepic")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 120, height: 120)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.blue, lineWidth: 4))
+            
             Text("Nom d'utilisateur : \(user.username)")
+                .font(.title2)
+            
             Text("Email : \(user.email)")
-            // Ajoutez d'autres détails de profil
+                .font(.title3)
+            
+            Spacer()
         }
+        .padding()
     }
 }
 

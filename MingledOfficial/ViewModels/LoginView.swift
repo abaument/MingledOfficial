@@ -2,71 +2,65 @@ import Foundation
 import SwiftUI
 import MapKit
 
-struct LoginView: View {
-    @State private var email = "Default@example.com"  // Email par défaut
-    @State private var password = "password"  // Mot de passe par défaut
-    @ObservedObject var userData: UserData
 
-    private let networking = Networking()
+struct LoginView: View {
+    @State private var email = ""  // Initialiser vide pour une saisie manuelle
+    @State private var password = ""  // Initialiser vide pour une saisie manuelle
+    @ObservedObject var userData: UserData
 
     var body: some View {
         VStack {
             Spacer()
-
+            
             // Logo de l'application
-            Image("logo")  // Remplacez "logo" par le nom de votre image de logo
+            Image("logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 120, height: 120)
 
             // Champs de saisie pour l'email et le mot de passe
-            // Masqués ou non selon votre choix
             TextField("Email", text: $email)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-                .hidden()  // Cache ce champ
 
             SecureField("Password", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
-                .hidden()  // Cache ce champ
 
-            // Bouton de connexion
+            // Bouton de connexion manuelle
             Button("Login") {
-                let defaultUser = User(id: UUID(), username: "DefaultUser", email: self.email)
-                self.userData.currentUser = defaultUser
-                self.userData.isUserLoggedIn = true
+                loginUser()
             }
             .padding()
             .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(8)
 
+            // Bouton pour une connexion rapide avec un utilisateur par défaut
+            Button("Connexion rapide") {
+                loginWithDefaultUser()
+            }
+            .padding()
+            .foregroundColor(.blue)
+
             Spacer()
         }
         .padding()
-        .onAppear {
-            networking.loginUser(email: email, password: password) { user in
-                if let user = user {
-                    self.userData.currentUser = user
-                    self.userData.isUserLoggedIn = true
-                    print("Connexion réussie")
-                } else {
-                    print("échec putain de merde")
-                }
-            }  // Connexion automatique à l'apparition de la vue
-        }
     }
 
-    // Méthode de connexion
+    // Méthode pour la connexion manuelle
     private func loginUser() {
-        networking.loginUser(email: email, password: password) { user in
-            if let user = user {
-                self.userData.currentUser = user
-                self.userData.isUserLoggedIn = true
-            } else {
-                print("Échec de l'authentification")
-            }
-        }
+        // Ici, vous pouvez ajouter votre logique de vérification des identifiants
+        // Pour cet exemple, nous connectons simplement l'utilisateur avec les données saisies
+        let user = User(id: UUID(), username: "Username", email: email)
+        self.userData.currentUser = user
+        self.userData.isUserLoggedIn = true
+    }
+
+    // Méthode pour la connexion avec un utilisateur par défaut
+    private func loginWithDefaultUser() {
+        let defaultUser = User(id: UUID(), username: "UserTest", email: "test@example.com")
+        userData.currentUser = defaultUser
+        userData.isUserLoggedIn = true
     }
 }

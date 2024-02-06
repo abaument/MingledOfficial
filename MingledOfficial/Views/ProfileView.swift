@@ -10,9 +10,25 @@ import SwiftUI
 
 struct ProfileView: View {
     @Binding var currentUser: User?
+    @Binding var isUserLoggedIn: Bool
+    
     var body: some View {
-        if let user = currentUser {
+        VStack {
+            if let user = currentUser {
                 ProfileDetailsView(user: user)
+                
+                Button(action: {
+                    self.isUserLoggedIn = false
+                    self.currentUser = nil
+                }) {
+                    Text("Se deconnecter")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.red)
+                        .clipShape(Capsule())
+                }
+                .padding()
+            }
         }
     }
 }

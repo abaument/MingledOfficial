@@ -11,15 +11,16 @@ import MapKit
 
 struct EventView: View {
     @ObservedObject var eventData: EventData
-
+    @Binding var selectedEvent: Event?
+    
     var body: some View {
         List(eventData.events) { event in
-            VStack(alignment: .leading) {
-                Text(event.title).font(.headline)
-                Text(event.description).font(.subheadline)
-                Text("Latitude: \(event.coordinate.latitude), Longitude: \(event.coordinate.longitude)")
+            Button(event.title) {
+                self.selectedEvent = event
             }
+        }
+        .sheet(item: $selectedEvent) { event in
+            EventDetailView(event: event)
         }
     }
 }
-

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC0578402B724D0200C035C4 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC05783F2B724D0200C035C4 /* UIImagePickerController.swift */; };
+		FC0578442B72549F00C035C4 /* PhotoLibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0578432B72549F00C035C4 /* PhotoLibraryPicker.swift */; };
 		FC8438BA2B571AFA00282D36 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8438B92B571AFA00282D36 /* EventDetailView.swift */; };
 		FCAAF2282B45D6DB0092DD4C /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */; };
 		FCAAF22A2B45D7AD0092DD4C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */; };
@@ -25,6 +27,10 @@
 		FCB99EDC2B276577000256FF /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99EDB2B276577000256FF /* EventStore.swift */; };
 		FCB99EDE2B27AC0E000256FF /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */; };
 		FCB99EE22B27C67C000256FF /* LocationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB99EE12B27C67C000256FF /* LocationPickerView.swift */; };
+		FCBA5FE92B6E4F7100B6BCCC /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBA5FE82B6E4F7100B6BCCC /* ChatView.swift */; };
+		FCBA5FED2B6E685700B6BCCC /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBA5FEC2B6E685700B6BCCC /* ChatMessage.swift */; };
+		FCBA5FEF2B6E6B9D00B6BCCC /* ReplyForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBA5FEE2B6E6B9D00B6BCCC /* ReplyForm.swift */; };
+		FCBA5FF12B6E6C1200B6BCCC /* ChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBA5FF02B6E6C1200B6BCCC /* ChatMessageView.swift */; };
 		FCEF5FB42B288F8E006A1C33 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FB32B288F8E006A1C33 /* Event.swift */; };
 		FCEF5FB62B289022006A1C33 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FB52B289022006A1C33 /* User.swift */; };
 		FCEF5FB82B289054006A1C33 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEF5FB72B289054006A1C33 /* LoginView.swift */; };
@@ -56,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC05783F2B724D0200C035C4 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
+		FC0578432B72549F00C035C4 /* PhotoLibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPicker.swift; sourceTree = "<group>"; };
 		FC8438B92B571AFA00282D36 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
@@ -77,6 +85,10 @@
 		FCB99EDB2B276577000256FF /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 		FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
 		FCB99EE12B27C67C000256FF /* LocationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerView.swift; sourceTree = "<group>"; };
+		FCBA5FE82B6E4F7100B6BCCC /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		FCBA5FEC2B6E685700B6BCCC /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		FCBA5FEE2B6E6B9D00B6BCCC /* ReplyForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyForm.swift; sourceTree = "<group>"; };
+		FCBA5FF02B6E6C1200B6BCCC /* ChatMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageView.swift; sourceTree = "<group>"; };
 		FCEF5FB32B288F8E006A1C33 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FCEF5FB52B289022006A1C33 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FCEF5FB72B289054006A1C33 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -132,6 +144,7 @@
 				FCEF5FCD2B29AA5B006A1C33 /* Networking.swift */,
 				FCF298122B338DEC00E530FB /* RegistrationView.swift */,
 				FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */,
+				FC8438B92B571AFA00282D36 /* EventDetailView.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -168,7 +181,6 @@
 				FCB99ECD2B2758C3000256FF /* MingledApp.swift */,
 				FCB99EA72B2755AA000256FF /* Assets.xcassets */,
 				FCB99EA92B2755AA000256FF /* Preview Content */,
-				FC8438B92B571AFA00282D36 /* EventDetailView.swift */,
 			);
 			path = MingledOfficial;
 			sourceTree = "<group>";
@@ -205,12 +217,16 @@
 				FCB99ED32B2758F0000256FF /* EventView.swift */,
 				FCB99ED12B2758E4000256FF /* MapView.swift */,
 				FCB99ED52B2758FC000256FF /* ProfileView.swift */,
+				FCBA5FEE2B6E6B9D00B6BCCC /* ReplyForm.swift */,
 				FCEF5FCF2B2A0A09006A1C33 /* LoadingView.swift */,
 				FCB99EE12B27C67C000256FF /* LocationPickerView.swift */,
 				FCEF5FCB2B29A230006A1C33 /* EventCreationView.swift */,
 				FCEF5FD12B2A1077006A1C33 /* ContentView.swift */,
 				FCB99ED92B276518000256FF /* EventListView.swift */,
+				FCBA5FF02B6E6C1200B6BCCC /* ChatMessageView.swift */,
 				FCEF5FC52B289ADF006A1C33 /* ProfileDetailsView.swift */,
+				FCBA5FE82B6E4F7100B6BCCC /* ChatView.swift */,
+				FC0578432B72549F00C035C4 /* PhotoLibraryPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,7 +235,9 @@
 			isa = PBXGroup;
 			children = (
 				FCEF5FB52B289022006A1C33 /* User.swift */,
+				FC05783F2B724D0200C035C4 /* UIImagePickerController.swift */,
 				FCEF5FB32B288F8E006A1C33 /* Event.swift */,
+				FCBA5FEC2B6E685700B6BCCC /* ChatMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,6 +388,8 @@
 				FCEF5FC42B289544006A1C33 /* UserData.swift in Sources */,
 				FCB99ED02B2758DB000256FF /* MainView.swift in Sources */,
 				FCEF5FD22B2A1077006A1C33 /* ContentView.swift in Sources */,
+				FCBA5FEF2B6E6B9D00B6BCCC /* ReplyForm.swift in Sources */,
+				FC0578402B724D0200C035C4 /* UIImagePickerController.swift in Sources */,
 				FCEF5FC62B289ADF006A1C33 /* ProfileDetailsView.swift in Sources */,
 				FC8438BA2B571AFA00282D36 /* EventDetailView.swift in Sources */,
 				FCEF5FCA2B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift in Sources */,
@@ -378,12 +398,16 @@
 				FCEF5FCC2B29A230006A1C33 /* EventCreationView.swift in Sources */,
 				FCB99EDC2B276577000256FF /* EventStore.swift in Sources */,
 				FCB99ED22B2758E4000256FF /* MapView.swift in Sources */,
+				FCBA5FED2B6E685700B6BCCC /* ChatMessage.swift in Sources */,
 				FCEF5FB82B289054006A1C33 /* LoginView.swift in Sources */,
 				FCB99EDE2B27AC0E000256FF /* MapViewRepresentable.swift in Sources */,
+				FCBA5FE92B6E4F7100B6BCCC /* ChatView.swift in Sources */,
 				FCAAF2282B45D6DB0092DD4C /* CustomAnnotationView.swift in Sources */,
 				FCB99EDA2B276518000256FF /* EventListView.swift in Sources */,
 				FCB99ED42B2758F0000256FF /* EventView.swift in Sources */,
+				FC0578442B72549F00C035C4 /* PhotoLibraryPicker.swift in Sources */,
 				FCB99ED82B276401000256FF /* EventData.swift in Sources */,
+				FCBA5FF12B6E6C1200B6BCCC /* ChatMessageView.swift in Sources */,
 				FCEF5FD02B2A0A09006A1C33 /* LoadingView.swift in Sources */,
 				FCB99ED62B2758FD000256FF /* ProfileView.swift in Sources */,
 				FCAAF22A2B45D7AD0092DD4C /* EventAnnotation.swift in Sources */,

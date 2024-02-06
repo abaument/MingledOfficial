@@ -7,7 +7,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     @Binding var selectedEvent: Event?
     var isSelectingLocation: Bool
     @Binding var selectedCoordinate: CLLocationCoordinate2D?
-    
+
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
@@ -65,6 +65,12 @@ struct MapViewRepresentable: UIViewRepresentable {
                     let locationInView = sender.location(in: mapView)
                     let coordinate = mapView.convert(locationInView, toCoordinateFrom: mapView)
                     parent.selectedCoordinate = coordinate
+            }
+        }
+        func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+            if let selectedEvent = parent.selectedEvent {
+                let region = MKCoordinateRegion(center: selectedEvent.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+                   mapView.setRegion(region, animated: true)
             }
         }
     }
