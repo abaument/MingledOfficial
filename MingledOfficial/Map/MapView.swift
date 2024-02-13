@@ -56,7 +56,7 @@ struct MapView: View {
         VStack {
             Text("Event: \(event.title)")
             Text("Description: \(event.description)")
-            Text("Location: \(event.coordinate.latitude), \(event.coordinate.longitude)")
+            Text("Location: \(event.latitude), \(event.longitude)")
             Button("Close") {
                 showingEventDetails = false
             }

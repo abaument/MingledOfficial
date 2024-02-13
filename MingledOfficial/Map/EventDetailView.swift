@@ -18,6 +18,9 @@ struct EventDetailView: View {
                 .font(.title)
             Text(event.description)
                 .font(.body)
+            Text(event.creator)
+                .font(.body)
+            
         }
     }
 }

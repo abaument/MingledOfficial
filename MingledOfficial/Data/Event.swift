@@ -8,6 +8,7 @@
 import Foundation
 import MapKit
 import SwiftUI
+import CoreLocation
 
 class Event: Identifiable, Codable {
     var id: UUID
@@ -22,6 +23,10 @@ class Event: Identifiable, Codable {
     var capacity: Int
     var practicalInfo: String
     var eventDate: Date
+    
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 
     init(id: UUID, title: String, description: String, latitude: Double, longitude: Double, creator: String, photos: [String], locationDescription: String, feedback: [String], capacity: Int, practicalInfo: String, eventDate: Date) {
         self.id = id
