@@ -1,28 +1,22 @@
-//
-//  TabBarController.swift
-//  MingledOfficial
-//
-//  Created by arthur baument on 11/12/2023.
-//
-
 import Foundation
 import SwiftUI
 import MapKit
 
 struct MainView: View {
     @StateObject private var eventData = EventData()
+    @StateObject private var userData = UserData()
     @Binding var currentUser: User?
     @Binding var isUserLoggedIn: Bool
     @State private var selectedEvent: Event?
     var body: some View {
         TabView {
-            MapView(eventData: eventData, currentUser: $currentUser)
+            MapView(eventData: eventData, userData: userData, currentUser: $currentUser)
                 .tabItem {
                     Image(systemName: "map.fill")
                     Text("Map")
                 }
             
-            EventView(eventData: eventData, selectedEvent: $selectedEvent)
+            EventView(eventData: eventData, selectedEvent: $selectedEvent, userData: userData)
                 .tabItem {
                     Label("Events", systemImage: "list.bullet")
                 }
@@ -33,7 +27,7 @@ struct MainView: View {
                     Text("Chat")
                 }
             
-            ProfileView(currentUser: $currentUser, isUserLoggedIn: $isUserLoggedIn)
+            ProfileView(userData: userData, eventData: eventData, isUserLoggedIn: $isUserLoggedIn)
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")

@@ -12,6 +12,7 @@ import MapKit
 struct EventView: View {
     @ObservedObject var eventData: EventData
     @Binding var selectedEvent: Event?
+    @ObservedObject var userData: UserData
     
     var body: some View {
         List(eventData.events) { event in
@@ -20,7 +21,7 @@ struct EventView: View {
             }
         }
         .sheet(item: $selectedEvent) { event in
-            EventDetailView(event: event)
+            EventDetailView(event: event, userData: userData)
         }
     }
 }

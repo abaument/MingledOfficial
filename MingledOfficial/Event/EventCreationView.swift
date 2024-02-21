@@ -15,22 +15,7 @@ struct EventCreationView: View {
     @State private var showingLocationPicker = false
     @Binding var selectedCoordinate: CLLocationCoordinate2D?
     @Environment(\.presentationMode) var presentationMode
-
-    func saveImageAndGetPath(image: UIImage) -> String? {
-        guard let imageData = image.jpegData(compressionQuality: 0.8) else { return nil }
-        let fileManager = FileManager.default
-        guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
-        let fileName = UUID().uuidString + ".jpg"
-        let fileURL = documentDirectory.appendingPathComponent(fileName)
-
-        do {
-            try imageData.write(to: fileURL)
-            return fileURL.path
-        } catch {
-            print("Error saving image: \(error)")
-            return nil
-        }
-    }
+    @State private var errorMessage: String? = nil
 
     var body: some View {
         NavigationView {
@@ -40,7 +25,7 @@ struct EventCreationView: View {
                     TextField("Description", text: $description)
                     TextField("Description de l'emplacement", text: $locationDescription)
                     TextField("Feedback", text: $feedback)
-                    TextField("Capacité", text: $capacity)
+                    TextField("Capacité", text: $capacity).keyboardType(.numberPad)
                     TextField("Infos pratiques", text: $practicalInfo)
                     DatePicker("Date de l'événement", selection: $eventDate, displayedComponents: .date)
                 }
@@ -50,7 +35,6 @@ struct EventCreationView: View {
                         showingLocationPicker = true
                     }
                     .sheet(isPresented: $showingLocationPicker) {
-                        // Assurez-vous que LocationPickerView est correctement implémenté pour mettre à jour `selectedCoordinate`
                         LocationPickerView(selectedCoordinate: $selectedCoordinate)
                     }
 
@@ -64,7 +48,6 @@ struct EventCreationView: View {
                         showingImagePicker = true
                     }
                     .sheet(isPresented: $showingImagePicker) {
-                        // Votre MultiImagePicker ici
                         MultiImagePicker(selectedImages: $selectedImages)
                     }
 
@@ -83,29 +66,15 @@ struct EventCreationView: View {
                     }
                 }
 
+                if let errorMessage = errorMessage {
+                    Section {
+                        Text(errorMessage).foregroundColor(.red)
+                    }
+                }
+
                 Section {
                     Button("Créer l'événement") {
-                        guard let capacityInt = Int(capacity), !title.isEmpty, !description.isEmpty, let coordinate = selectedCoordinate else {
-                            print("Validation Échouée")
-                            return
-                        }
-                        let imagePaths = selectedImages.compactMap { saveImageAndGetPath(image: $0) }
-                            let newEvent = Event(
-                                id: UUID(),
-                                title: title,
-                                description: description,
-                                latitude: coordinate.latitude,
-                                longitude: coordinate.longitude,
-                                creator: "DefaultCreator",
-                                photos: imagePaths,
-                                locationDescription: locationDescription,
-                                feedback: [feedback],
-                                capacity: capacityInt,
-                                practicalInfo: practicalInfo,
-                                eventDate: eventDate
-                            )
-                            eventData.events.append(newEvent)
-                            presentationMode.wrappedValue.dismiss()
+                        createEvent()
                     }
                 }
             }
@@ -113,6 +82,63 @@ struct EventCreationView: View {
             .navigationBarItems(trailing: Button("Annuler") {
                 presentationMode.wrappedValue.dismiss()
             })
+        }
+    }
+
+    private func createEvent() {
+        guard !title.isEmpty else {
+            errorMessage = "Le titre ne peut pas être vide."
+            return
+        }
+
+        guard !description.isEmpty else {
+            errorMessage = "La description ne peut pas être vide."
+            return
+        }
+
+        guard let capacityInt = Int(capacity), capacityInt > 0 else {
+            errorMessage = "La capacité doit être un nombre positif."
+            return
+        }
+
+        guard let coordinate = selectedCoordinate else {
+            errorMessage = "Aucun emplacement sélectionné."
+            return
+        }
+
+        let imagePaths = selectedImages.compactMap { saveImageAndGetPath(image: $0) }
+
+        let newEvent = Event(
+            id: UUID(),
+            title: title,
+            description: description,
+            latitude: coordinate.latitude,
+            longitude: coordinate.longitude,
+            creator: "DefaultCreator",
+            photos: imagePaths,
+            locationDescription: locationDescription,
+            feedback: [feedback],
+            capacity: capacityInt,
+            practicalInfo: practicalInfo,
+            eventDate: eventDate
+        )
+        eventData.events.append(newEvent)
+        presentationMode.wrappedValue.dismiss()
+    }
+
+    private func saveImageAndGetPath(image: UIImage) -> String? {
+        guard let imageData = image.jpegData(compressionQuality: 0.8) else { return nil }
+        let fileManager = FileManager.default
+        guard let documentDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        let fileName = UUID().uuidString + ".jpg"
+        let fileURL = documentDirectory.appendingPathComponent(fileName)
+
+        do {
+            try imageData.write(to: fileURL)
+            return fileURL.path
+        } catch {
+            print("Error saving image: \(error)")
+            return nil
         }
     }
 }

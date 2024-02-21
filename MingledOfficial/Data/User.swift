@@ -13,4 +13,5 @@ struct User: Identifiable, Decodable {
     var id: UUID
     var username: String
     var email: String
+    var participatingEvents: [UUID] = []
 }

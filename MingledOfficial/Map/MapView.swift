@@ -3,6 +3,7 @@ import MapKit
 
 struct MapView: View {
     @ObservedObject var eventData: EventData
+    @ObservedObject var userData: UserData
     @Binding var currentUser: User?
     @State private var showingEventCreationSheet = false
     @State private var selectedEvent: Event?
@@ -48,7 +49,7 @@ struct MapView: View {
             }
         }
         .sheet(item : $selectedEvent) {event in
-            EventDetailView(event: event)
+            EventDetailView(event: event, userData: userData)
         }
     }
 

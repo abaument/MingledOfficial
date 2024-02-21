@@ -22,7 +22,7 @@ class Event: Identifiable, Codable {
     var feedback: [String] // Liste des avis
     var capacity: Int
     var practicalInfo: String
-    var eventDate: Date
+    var eventDate: Date?
     
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

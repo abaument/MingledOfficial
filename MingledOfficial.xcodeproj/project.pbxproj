@@ -10,6 +10,7 @@
 		FC0578402B724D0200C035C4 /* UIImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC05783F2B724D0200C035C4 /* UIImagePickerController.swift */; };
 		FC0578442B72549F00C035C4 /* PhotoLibraryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0578432B72549F00C035C4 /* PhotoLibraryPicker.swift */; };
 		FC486A1C2B729A6C003837F7 /* MultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC486A1B2B729A6C003837F7 /* MultiImagePicker.swift */; };
+		FC4F248C2B8646E000B7DF59 /* MyEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4F248B2B8646E000B7DF59 /* MyEventsView.swift */; };
 		FC8438BA2B571AFA00282D36 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8438B92B571AFA00282D36 /* EventDetailView.swift */; };
 		FCAAF2282B45D6DB0092DD4C /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */; };
 		FCAAF22A2B45D7AD0092DD4C /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */; };
@@ -66,6 +67,7 @@
 		FC05783F2B724D0200C035C4 /* UIImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerController.swift; sourceTree = "<group>"; };
 		FC0578432B72549F00C035C4 /* PhotoLibraryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryPicker.swift; sourceTree = "<group>"; };
 		FC486A1B2B729A6C003837F7 /* MultiImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImagePicker.swift; sourceTree = "<group>"; };
+		FC4F248B2B8646E000B7DF59 /* MyEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsView.swift; sourceTree = "<group>"; };
 		FC8438B92B571AFA00282D36 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		FCAAF2292B45D7AD0092DD4C /* EventAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				FCB99ED52B2758FC000256FF /* ProfileView.swift */,
 				FCEF5FC52B289ADF006A1C33 /* ProfileDetailsView.swift */,
+				FC4F248B2B8646E000B7DF59 /* MyEventsView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -167,10 +170,8 @@
 				FCB99ED12B2758E4000256FF /* MapView.swift */,
 				FCEF5FC92B28BB7C006A1C33 /* LocationPickerMapViewRepresentable.swift */,
 				FCB99EDD2B27AC0E000256FF /* MapViewRepresentable.swift */,
-				FC8438B92B571AFA00282D36 /* EventDetailView.swift */,
 				FCAAF2272B45D6DB0092DD4C /* CustomAnnotationView.swift */,
 				FCB99EE12B27C67C000256FF /* LocationPickerView.swift */,
-				FCEF5FCB2B29A230006A1C33 /* EventCreationView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -178,6 +179,8 @@
 		FC486A1F2B7B5AEE003837F7 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				FCEF5FCB2B29A230006A1C33 /* EventCreationView.swift */,
+				FC8438B92B571AFA00282D36 /* EventDetailView.swift */,
 				FCB99ED32B2758F0000256FF /* EventView.swift */,
 				FCB99ED92B276518000256FF /* EventListView.swift */,
 				FCB99EDB2B276577000256FF /* EventStore.swift */,
@@ -403,6 +406,7 @@
 				FCEF5FB62B289022006A1C33 /* User.swift in Sources */,
 				FCB99ECE2B2758C3000256FF /* MingledApp.swift in Sources */,
 				FCB99EE22B27C67C000256FF /* LocationPickerView.swift in Sources */,
+				FC4F248C2B8646E000B7DF59 /* MyEventsView.swift in Sources */,
 				FC486A1C2B729A6C003837F7 /* MultiImagePicker.swift in Sources */,
 				FCEF5FCE2B29AA5B006A1C33 /* Networking.swift in Sources */,
 				FCEF5FC42B289544006A1C33 /* UserData.swift in Sources */,
